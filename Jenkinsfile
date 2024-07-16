@@ -8,9 +8,9 @@ pipeline {
             }
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'echo $env.PATH'
+                sh 'echo ${env.PATH}'
                 sh 'echo $PATH'
-                sh 'echo $env.HOME'
+                sh 'echo ${env.PATH}'
                 sh 'echo $HOME'
             }
         }
