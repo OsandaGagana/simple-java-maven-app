@@ -1,11 +1,14 @@
 pipeline {
     agent any
+
     stages {
-        stage('Build') { 
+        stage('Build') {
+            environment {
+                PATH = "/opt/maven/bin:${env.PATH}"
+            }
             steps {
-                sh 'mvn -B -DskipTests clean package' 
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
 }
-
