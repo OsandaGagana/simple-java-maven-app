@@ -6,12 +6,9 @@ pipeline {
             environment {
                 PATH = "/opt/maven/bin:${env.PATH}"
             }
-
-            steps{
-                sh 'echo $PATH'
-            }
             steps {
                 sh 'mvn -B -DskipTests clean package'
+                sh 'echo $PATH'
             }
         }
     }
